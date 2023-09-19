@@ -1,0 +1,23 @@
+﻿<Window x:Class="SalesWPFApp.HomeSalesManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="Home Sales Management" Height="340" Width="300" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel Orientation="Vertical" Background="AliceBlue">
+        <Label FontSize="20" Margin="0,20,0,0" HorizontalAlignment="Center"
+               Background="AliceBlue" 
+               >Home Sales Management</Label>
+        <Button Width="200" Height="22" Background="#FF65E0E4" Margin="0,30,0,0"
+                Name="btnMember" Click="btnMember_Click">Member Management</Button>
+        <Button Width="200" Height="22" Background="#FF65E0E4" Margin="0,30,0,0"
+            Name="btnOrder" Click="btnOrder_Click">Product Management</Button>
+        <Button Width="200" Height="22" Background="#FF65E0E4" Margin="0,30,0,0"
+            Name="btnProduct" Click="btnProduct_Click">Order Management</Button>
+        <Button Width="200" Height="22" Background="#FF65E0E4" Margin="0,30,0,0"
+            Name="btnLogout" Click="btnLogout_Click">Logout</Button>
+    </StackPanel>
+</Window>

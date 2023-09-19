@@ -1,0 +1,39 @@
+﻿<Window x:Class="SalesWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="Login" Height="220" Width="400" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+    <DockPanel Background="AntiqueWhite">
+        <Grid DockPanel.Dock="Top" Height="150">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lbEmail" Grid.Row="0" Grid.Column="0" 
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center">Email :</Label>
+            <TextBox x:Name="txtEmail" Grid.Row="0" Grid.Column="1"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Width="200" Height="25"/>
+            <Label x:Name="lbPassword" Grid.Row="1" Grid.Column="0" 
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center">Password :</Label>
+            <TextBox x:Name="txtPassword" Grid.Row="1" Grid.Column="1"
+                     HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="200" Height="25"/>
+        </Grid>
+
+        <Button x:Name="btnLogin" Height="30" Width="50" Background="#FFBFF5E3"
+                Click="btnLogin_Click">Login</Button>
+    </DockPanel>
+</Window>

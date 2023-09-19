@@ -1,0 +1,104 @@
+﻿<Window x:Class="SalesWPFApp.ProductManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="Product Management" Height="470" Width="800"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <StackPanel>
+        <Label Content="Product Mangement" HorizontalContentAlignment="Center" 
+            VerticalAlignment="Top"
+            Margin="0,20,0,20" FontSize="20"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Height="300" Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="Product ID: " Grid.Row="0" Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+                    <Label Content="Category ID: " Grid.Row="1" Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+                    <Label Content="Product Name: " Grid.Row="2" Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+                    <Label Content="Weight: " Grid.Row="3" Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+                    <Label Content="Unit Price: " Grid.Row="4" Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+                    <Label Content="Units In Stock: " Grid.Row="5" Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="txtProductId" Grid.Row="0" Grid.Column="1" Height="22"
+                         Text="{Binding Path=ProductId, Mode=OneWay}"
+                         DataContext="{Binding ElementName=lvProduct, Path=SelectedItem}"/>
+                    <TextBox x:Name="txtCategoryId" Grid.Row="1" Grid.Column="1" Height="22"
+                         Text="{Binding Path=CategoryId, Mode=OneWay}"
+                         DataContext="{Binding ElementName=lvProduct, Path=SelectedItem}"/>
+                    <TextBox x:Name="txtProductName" Grid.Row="2" Grid.Column="1" Height="22"
+                         Text="{Binding Path=ProductName, Mode=OneWay}"
+                         DataContext="{Binding ElementName=lvProduct, Path=SelectedItem}"/>
+                    <TextBox x:Name="txtWeight" Grid.Row="3" Grid.Column="1" Height="22"
+                         Text="{Binding Path=Weight, Mode=OneWay}"
+                         DataContext="{Binding ElementName=lvProduct, Path=SelectedItem}"/>
+                    <TextBox x:Name="txtUnitPrice" Grid.Row="4" Grid.Column="1" Height="22"
+                         Text="{Binding Path=UnitPrice, Mode=OneWay, StringFormat={}{0:N3}}"
+                         DataContext="{Binding ElementName=lvProduct, Path=SelectedItem}"/>
+                    <TextBox x:Name="txtUnitsInStock" Grid.Row="5" Grid.Column="1" Height="22"
+                         Text="{Binding Path=UnitsInStock, Mode=OneWay}"
+                         DataContext="{Binding ElementName=lvProduct, Path=SelectedItem}"/>
+                </Grid>
+            </StackPanel>
+
+            <ListView x:Name="lvProduct" Grid.Row="0" Grid.Column="1" Margin="15,0,15,0"
+                  Height="280" Width="500">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Product ID"
+                                    DisplayMemberBinding="{Binding Path=ProductId}"/>
+                        <GridViewColumn Header="Category ID"
+                                    DisplayMemberBinding="{Binding Path=CategoryId}"/>
+                        <GridViewColumn Header="Product Name"
+                                    DisplayMemberBinding="{Binding Path=ProductName}"/>
+                        <GridViewColumn Header="Weight"
+                                    DisplayMemberBinding="{Binding Path=Weight}"/>
+                        <GridViewColumn Header="Unit Price"
+                                    DisplayMemberBinding="{Binding Path=UnitPrice, 
+                            StringFormat={}{0:N3}}"/>
+                        <GridViewColumn Header="Units In Stock"
+                                    DisplayMemberBinding="{Binding Path=UnitsInStock}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+            <Button Content="Add New Member" Width="110" 
+                Background="#FFDCF5FB" Name="btnAdd" Click="btnAdd_Click"/>
+            <Button Content="Update Member" Margin="30,0,30,0" Width="110" 
+                Background="#FFDCF5FB" Name="btnUpdate" Click="btnUpdate_Click"/>
+            <Button Content="Delete Member" Width="110"
+                Background="#FFDCF5FB" Name="btnDelete" Click="btnDelete_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
