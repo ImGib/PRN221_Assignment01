@@ -46,7 +46,7 @@ namespace SalesWPFApp
             catch (Exception ex)
             {
                 MessageBox.Show("UpdateInitialize: " + ex.Message);
-                
+
             }
         }
 
@@ -54,10 +54,17 @@ namespace SalesWPFApp
         {
             try
             {
-                if (MessageBox.Show("Do You Wanna " +strOption+" Member?", strOption+" Member", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Do You Wanna " + strOption + " Member?", strOption + " Member", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     Member member = GetScreenInfo();
-                    memberRepository.InsertMember(member);
+                    if (isAdd)
+                    {
+                        memberRepository.InsertMember(member);
+                    }
+                    else
+                    {
+                        memberRepository.UpdateMember(member);
+                    }
                     Close();
                 }
             }
@@ -85,6 +92,10 @@ namespace SalesWPFApp
 
             try
             {
+                if (!isAdd)
+                {
+                    member.MemberId = int.Parse(txtMemberId.Text);
+                }
                 member.Email = txtEmail.Text;
                 member.Country = txtCountry.Text;
                 member.City = txtCity.Text;

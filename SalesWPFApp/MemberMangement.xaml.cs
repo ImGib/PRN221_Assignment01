@@ -78,7 +78,7 @@ namespace SalesWPFApp
             }
         }
 
-        public Member GetMemberInfor()
+        private Member GetMemberInfor()
         {
             Member member = new Member();
             try

@@ -1,0 +1,16 @@
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\bin\Debug\net6.0\appsettings.json
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\bin\Debug\net6.0\BusinessObject.dll
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\bin\Debug\net6.0\BusinessObject.pdb
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\bin\Debug\net6.0\DataAccess.dll
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\bin\Debug\net6.0\DataAccess.pdb
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.AssemblyReference.cache
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfoInputs.cache
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfo.cs
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.CoreCompileInputs.cache
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.CopyComplete
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\BusinessObject.dll
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll

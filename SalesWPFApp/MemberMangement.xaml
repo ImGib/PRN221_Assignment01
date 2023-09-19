@@ -72,7 +72,7 @@
             </StackPanel>
 
             <ListView x:Name="lvMember" Grid.Row="0" Grid.Column="1" Margin="15,0,15,0"
-                      Height="280" Width="520">
+                      Height="280" Width="500">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Member ID"

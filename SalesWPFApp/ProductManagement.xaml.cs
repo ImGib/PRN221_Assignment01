@@ -1,18 +1,7 @@
 ﻿using BusinessObject.Repository;
 using DataAccess.DataAccess;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace SalesWPFApp
 {
@@ -26,10 +15,10 @@ namespace SalesWPFApp
         {
             InitializeComponent();
             this.productReposity = productReposity;
-            LoadMemberList();
+            LoadProductList();
         }
 
-        private void LoadMemberList()
+        private void LoadProductList()
         {
             var source = productReposity.GetProducts();
             lvProduct.ItemsSource = source;
@@ -37,17 +26,68 @@ namespace SalesWPFApp
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                ModifyProduct modifyProduct = new ModifyProduct(productReposity);
+                modifyProduct.ShowDialog();
+                LoadProductList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Open Window Add: " + ex.Message);
+            }
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                ModifyProduct modifyProduct = new ModifyProduct(productReposity, false, GetProductInfor());
+                modifyProduct.ShowDialog();
+                LoadProductList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Open Window Update: " + ex.Message);
+            }
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (MessageBox.Show("Do you wanna delete this product?", "Delete Product", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    productReposity.DeleteProduct(GetProductInfor());
+                    LoadProductList();
+                    MessageBox.Show("Delete Successful!", "Delete Product");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Delete Error: " + ex.Message, "Delete Product");
+            }
+        }
 
+        private Product GetProductInfor()
+        {
+            Product pro = new Product();
+
+            try
+            {
+                pro.ProductId = int.Parse(txtProductId.Text);
+                pro.CategoryId = int.Parse(txtCategoryId.Text);
+                pro.ProductName = txtProductName.Text;
+                pro.Weight = txtWeight.Text;
+                pro.UnitPrice = decimal.Parse(txtUnitPrice.Text);
+                pro.UnitsInStock = int.Parse(txtUnitsInStock.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("GetProductInfor: " + ex.Message);
+            }
+
+            return pro;
         }
     }
 }

@@ -44,7 +44,8 @@
        HorizontalAlignment="Right"
        VerticalAlignment="Center"/>
 
-                <TextBox x:Name="txtProductId" Grid.Row="0" Grid.Column="1" Height="22"/>
+                <TextBox x:Name="txtProductId" Grid.Row="0" Grid.Column="1" Height="22"
+                         IsReadOnly="True"/>
                 <TextBox x:Name="txtCategoryId" Grid.Row="1" Grid.Column="1" Height="22"/>
                 <TextBox x:Name="txtProductName" Grid.Row="2" Grid.Column="1" Height="22"/>
                 <TextBox x:Name="txtWeight" Grid.Row="3" Grid.Column="1" Height="22"/>

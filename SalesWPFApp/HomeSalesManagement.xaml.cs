@@ -65,7 +65,17 @@ namespace SalesWPFApp
 
         private void btnProduct_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                OrderManagement orderManagement = new OrderManagement(orderRepository);
+                Hide();
+                orderManagement.ShowDialog();
+                ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Open Order Management Error: " + ex.Message);
+            }
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
