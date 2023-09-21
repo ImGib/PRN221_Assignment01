@@ -35,21 +35,32 @@ namespace DataAccess
             }
             return member;
         }
-        public Boolean LoginCheck(Member member) {
+        public Member? GetMemberByEmail(string email)
+        {
+            Member? member = null;
             try
             {
                 var salesManage = new SalesManagementContext();
-                Member? mem = salesManage.Members.SingleOrDefault(mem => (mem.Email.Equals(member.Email)) && (mem.Password.Equals(member.Password)));
-                if(mem == null)
-                {
-                    return false;
-                }
+                member = salesManage.Members.SingleOrDefault(member => member.Email.Equals(email));
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return true;
+            return member;
+        }
+        public Member? LoginCheck(string email, string password) {
+            Member member = null;
+            try
+            {
+                var salesManage = new SalesManagementContext();
+                member = salesManage.Members.SingleOrDefault(mem => (mem.Email.Equals(email)) && (mem.Password.Equals(password)));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return member;
         }
         //GetAll
         public IEnumerable<Member> GetMembers()

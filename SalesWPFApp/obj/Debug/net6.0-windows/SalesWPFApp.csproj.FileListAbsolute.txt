@@ -75,3 +75,9 @@ E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-window
 E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\OrderManagement.baml
 E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\ModifyOrder.g.cs
 E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\ModifyOrder.baml
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\OrderReport.g.cs
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\OrderReport.baml
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\MemberRegister.g.cs
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\MemberRegister.baml
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\UserFunction.g.cs
+E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\obj\Debug\net6.0-windows\UserFunction.baml

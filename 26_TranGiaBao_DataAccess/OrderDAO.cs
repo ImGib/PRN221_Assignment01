@@ -125,5 +125,20 @@ namespace DataAccess
 
             }
         }
+        public IEnumerable<Order> filterOrder(DateTime start, DateTime end)
+        {
+            List<Order> orders = new List<Order>();
+            try
+            {
+                var salesManage = new SalesManagementContext();
+                orders = salesManage.Orders.Where(ord => ord.OrderDate >= start && ord.OrderDate <= end)
+                                            .OrderBy(ord => ord.OrderDate).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Faile to filter Order!");
+            }
+            return orders;
+        }
     }
 }

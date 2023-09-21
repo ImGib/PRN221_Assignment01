@@ -8,7 +8,7 @@
             Title="Order Mangement" Height="470" Width="800" ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen">
     <StackPanel>
-        <Label Content="Member Mangement" HorizontalContentAlignment="Center" 
+        <Label Content="Order Mangement" HorizontalContentAlignment="Center" 
             VerticalAlignment="Top"
             Margin="0,20,0,20" FontSize="20"/>
         <Grid>
@@ -95,11 +95,11 @@
             </ListView>
         </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
-            <Button Content="Add New Member" Width="110" 
+            <Button Content="Add New Order" Width="110" 
                 Background="#FFDCF5FB" Name="btnAdd" Click="btnAdd_Click"/>
-            <Button Content="Update Member" Margin="30,0,30,0" Width="110" 
+            <Button Content="Update Order" Margin="30,0,30,0" Width="110" 
                 Background="#FFDCF5FB" Name="btnUpdate" Click="btnUpdate_Click"/>
-            <Button Content="Delete Member" Width="110"
+            <Button Content="Delete Order" Width="110"
                 Background="#FFDCF5FB" Name="btnDelete" Click="btnDelete_Click"/>
         </StackPanel>
     </StackPanel>

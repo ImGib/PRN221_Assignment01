@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Repository;
+using DataAccess.DataAccess;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
@@ -27,7 +28,12 @@ namespace SalesWPFApp
             orderRepository = new OrderRepository();
             orderDetailRepository = new OrderDetailsRepository();
         }
-
+        private void ClearText()
+        {
+            txtEmail.Text = string.Empty;
+            txtPassword.Password = string.Empty;
+            txtEmail.Focus();
+        }
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -50,8 +56,20 @@ namespace SalesWPFApp
                 else
                 {
                     //member
-
+                    Member? member = memberRepository.LoginCheck(email, password);
+                    if (member != null)
+                    {
+                        UserFunction userFunction = new UserFunction(memberRepository, orderRepository,member);
+                        Hide();
+                        userFunction.ShowDialog();
+                        this.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email or password has been wrong. Please Enter Again!");
+                    }
                 }
+                ClearText();
             }
             catch (Exception ex)
             {
@@ -62,7 +80,8 @@ namespace SalesWPFApp
 
         private Boolean AdminCheck()
         {
-            var admin = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build().GetSection("Admin");
+            var admin = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).
+                AddJsonFile("appsettings.json").Build().GetSection("Admin");
 
             if (!admin["email"].Equals(email) || !admin["password"].Equals(password))
             {
@@ -77,19 +96,34 @@ namespace SalesWPFApp
 
             if (String.IsNullOrEmpty(email))
             {
-                MessageBox.Show("email must not blank! Please Ener again.");
+                MessageBox.Show("email must not blank! Please Enter again.");
                 return false;
             }
 
-            password = txtPassword.Text;
+            password = txtPassword.Password;
 
             if (String.IsNullOrEmpty(password))
             {
-                MessageBox.Show("password must not blank! Please Ener again.");
+                MessageBox.Show("password must not blank! Please Enter again.");
                 return false;
             }
             return true;
         }
 
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MemberRegister memberRegister = new MemberRegister(memberRepository);
+                Hide();
+                memberRegister.ShowDialog();
+                ClearText();
+                ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

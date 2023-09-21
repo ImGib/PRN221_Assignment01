@@ -56,11 +56,18 @@ namespace SalesWPFApp
         {
             try
             {
-                if (MessageBox.Show("Do you wanna delete this product?", "Delete Product", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                Product product = GetProductInfor();
+                if (product != null)
                 {
-                    productReposity.DeleteProduct(GetProductInfor());
-                    LoadProductList();
-                    MessageBox.Show("Delete Successful!", "Delete Product");
+                    if (MessageBox.Show("Do you wanna delete this product?", "Delete Product", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        productReposity.DeleteProduct(GetProductInfor());
+                        LoadProductList();
+                        MessageBox.Show("Delete Successful!", "Delete Product");
+                    }
+                } else
+                {
+                    MessageBox.Show("You Have to enter value!");
                 }
             }
             catch (Exception ex)
@@ -88,6 +95,53 @@ namespace SalesWPFApp
             }
 
             return pro;
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            LoadProductList();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                searchProduct();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search Product: " + ex.Message);
+            }
+        }
+        private void searchProduct()
+        {
+            try
+            {
+                int proId = txtProductIdFilter.Text != "" ? int.Parse(txtProductIdFilter.Text) : -1;
+                string proName = txtProductNameFilter.Text;
+                decimal unitPrice = txtUniPriceFilter.Text != "" ? decimal.Parse(txtUniPriceFilter.Text) : -1;
+                int unitInStock = txtUnitInStockFilter.Text != "" ? int.Parse(txtUnitInStockFilter.Text) : -1;
+                //get data
+                var source = productReposity.filterProduct(proId, proName, unitPrice, unitInStock);
+                //put data
+                lvProduct.ItemsSource = source;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search Product: " + ex.Message);
+            }
+        }
+
+        private void txtProductNameFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            try
+            {
+                searchProduct();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("txtProductNameFilter_TextChanged_Search Product: " + ex.Message);
+            }
         }
     }
 }

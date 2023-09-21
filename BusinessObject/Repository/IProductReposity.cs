@@ -14,5 +14,6 @@ namespace BusinessObject.Repository
         void InsertProduct(Product product);
         void UpdateProduct(Product product);
         void DeleteProduct(Product product);
+        IEnumerable<Product> filterProduct(int proId, string proName, decimal uniPrice, int unitInStock);
     }
 }

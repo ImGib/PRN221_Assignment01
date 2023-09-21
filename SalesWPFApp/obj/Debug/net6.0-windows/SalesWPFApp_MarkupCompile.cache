@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 E:\FU-Sem7\PRN221\26_TranGiaBao_Assignment01\SalesWPFApp\App.xaml
-8266219449
+11207020149
 
-10593466196
+131374048808
 22288922120
-HomeSalesManagement.xaml;MainWindow.xaml;MemberMangement.xaml;ModifyMember.xaml;ModifyOrder.xaml;ModifyProduct.xaml;OrderManagement.xaml;ProductManagement.xaml;
+HomeSalesManagement.xaml;MainWindow.xaml;MemberMangement.xaml;MemberRegister.xaml;ModifyMember.xaml;ModifyOrder.xaml;ModifyProduct.xaml;OrderManagement.xaml;OrderReport.xaml;ProductManagement.xaml;UserFunction.xaml;
 
 False
 

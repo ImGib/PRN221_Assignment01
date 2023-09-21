@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="Home Sales Management" Height="340" Width="300" ResizeMode="NoResize"
+        Title="Home Sales Management" Height="370" Width="300" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <StackPanel Orientation="Vertical" Background="AliceBlue">
         <Label FontSize="20" Margin="0,20,0,0" HorizontalAlignment="Center"
@@ -17,6 +17,8 @@
             Name="btnOrder" Click="btnOrder_Click">Product Management</Button>
         <Button Width="200" Height="22" Background="#FF65E0E4" Margin="0,30,0,0"
             Name="btnProduct" Click="btnProduct_Click">Order Management</Button>
+        <Button Width="200" Height="22" Background="#FF65E0E4" Margin="0,30,0,0"
+            Name="btnReport" Click="btnReport_Click">Report Statistic</Button>
         <Button Width="200" Height="22" Background="#FF65E0E4" Margin="0,30,0,0"
             Name="btnLogout" Click="btnLogout_Click">Logout</Button>
     </StackPanel>

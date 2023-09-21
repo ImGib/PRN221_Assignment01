@@ -13,6 +13,9 @@
     <Compile Update="MemberMangement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MemberRegister.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ModifyMember.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,7 +28,13 @@
     <Compile Update="OrderManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="OrderReport.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ProductManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserFunction.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -37,6 +46,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MemberMangement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MemberRegister.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ModifyMember.xaml">
@@ -51,7 +63,13 @@
     <Page Update="OrderManagement.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="OrderReport.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ProductManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserFunction.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

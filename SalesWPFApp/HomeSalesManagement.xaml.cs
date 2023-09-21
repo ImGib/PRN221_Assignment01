@@ -80,7 +80,28 @@ namespace SalesWPFApp
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Close();
+            }catch (Exception ex)
+            {
+                throw new Exception("Cannot Logout." + ex.Message);
+            }
+        }
 
+        private void btnReport_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OrderReport orderReport = new OrderReport(orderRepository);
+                Hide();
+                orderReport.ShowDialog();
+                ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Open Report Statistic Error: " + ex.Message);
+            }
         }
     }
 }

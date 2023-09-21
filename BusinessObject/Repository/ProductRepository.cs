@@ -7,6 +7,9 @@ namespace BusinessObject.Repository
     {
         public void DeleteProduct(Product product) => ProductDAO.Instance.RemoveProduct(product);
 
+        public IEnumerable<Product> filterProduct(int proId, string proName, decimal uniPrice, int unitInStock)
+            => ProductDAO.Instance.filterProduct(proId, proName, uniPrice, unitInStock);
+
         public Product GetProduct(int id) => ProductDAO.Instance.GetProductById(id);
 
         public IEnumerable<Product> GetProducts() => ProductDAO.Instance.GetProducts();

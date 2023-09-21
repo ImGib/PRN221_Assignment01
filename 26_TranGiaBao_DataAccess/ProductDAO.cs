@@ -116,5 +116,23 @@ namespace DataAccess
                 throw new Exception("Productdoes not already exist!");
             }
         }
+        public IEnumerable<Product> filterProduct(int proId, string proName, decimal uniPrice, int unitInStock)
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                var salesManagement = new SalesManagementContext();
+                products = salesManagement.Products.Where(pro => 
+                    (proId != -1 ? pro.ProductId == proId : pro.ProductId > proId) &&
+                                                    pro.ProductName.Contains(proName) &&
+                    (uniPrice != -1 ? pro.UnitPrice == uniPrice : pro.UnitPrice > uniPrice) &&
+                    (unitInStock != -1 ? pro.UnitsInStock == unitInStock : pro.UnitsInStock > unitInStock)
+                                                    ).ToList();
+            } catch (Exception ex)
+            {
+                throw new Exception("Can't filter product!");
+            }
+            return products;
+        }
     }
 }

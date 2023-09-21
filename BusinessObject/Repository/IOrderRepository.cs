@@ -14,5 +14,6 @@ namespace BusinessObject.Repository
         void InsertOrder(Order order);
         void UpdateOrder(Order order);
         void DeleteOrder(Order order);
+        IEnumerable<Order> filterOrder(DateTime start, DateTime end);
     }
 }
