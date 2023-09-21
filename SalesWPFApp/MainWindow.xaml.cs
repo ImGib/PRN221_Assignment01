@@ -51,6 +51,7 @@ namespace SalesWPFApp
                     HomeSalesManagement homeSalesManagement = new HomeSalesManagement(memberRepository, orderDetailRepository, orderRepository, productReposity);
                     this.Hide();
                     homeSalesManagement.ShowDialog();
+                    ClearText();
                     this.ShowDialog();
                 }
                 else
@@ -59,9 +60,10 @@ namespace SalesWPFApp
                     Member? member = memberRepository.LoginCheck(email, password);
                     if (member != null)
                     {
-                        UserFunction userFunction = new UserFunction(memberRepository, orderRepository,member);
+                        UserFunction userFunction = new UserFunction(memberRepository, orderRepository, member);
                         Hide();
                         userFunction.ShowDialog();
+                        ClearText();
                         this.ShowDialog();
                     }
                     else
@@ -69,7 +71,6 @@ namespace SalesWPFApp
                         MessageBox.Show("Email or password has been wrong. Please Enter Again!");
                     }
                 }
-                ClearText();
             }
             catch (Exception ex)
             {

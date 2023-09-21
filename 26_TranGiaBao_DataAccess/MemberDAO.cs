@@ -135,6 +135,11 @@ namespace DataAccess
                 if (mem != null)
                 {
                     var salesManage = new SalesManagementContext();
+                    List<Order> orders = OrderDAO.Instance.GetOrdersByMemberID(member.MemberId).ToList();
+                    foreach(Order or in orders)
+                    {
+                        salesManage.Orders.Remove(or);
+                    }
                     salesManage.Members.Remove(member);
                     salesManage.SaveChanges();
                 }

@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using DataAccess.DataAccess;
+using System.Collections.Generic;
 
 namespace BusinessObject.Repository
 {
@@ -13,6 +14,8 @@ namespace BusinessObject.Repository
         public IEnumerable<Order> GetAll() => OrderDAO.Instance.GetOrders();
 
         public Order GetOrder(int id) => OrderDAO.Instance.GetOrderByOrderId(id);
+
+        public IEnumerable<Order> GetOrdersByMemberID(int id) => OrderDAO.Instance.GetOrdersByMemberID(id);
 
         public void InsertOrder(Order order) => OrderDAO.Instance.AddOrder(order);
 

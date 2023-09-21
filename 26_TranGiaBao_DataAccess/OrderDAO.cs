@@ -37,6 +37,19 @@ namespace DataAccess
             }
             return order;
         }
+        public IEnumerable<Order> GetOrdersByMemberID(int id) {
+            List<Order> orders = new List<Order>();
+            try
+            {
+                var salesManage = new SalesManagementContext();
+                orders = salesManage.Orders.Where(ord => ord.MemberId  == id).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"{ex.Message}");
+            }
+            return orders;
+        }
         //GetAll
         public IEnumerable<Order> GetOrders()
         {
@@ -132,7 +145,7 @@ namespace DataAccess
             {
                 var salesManage = new SalesManagementContext();
                 orders = salesManage.Orders.Where(ord => ord.OrderDate >= start && ord.OrderDate <= end)
-                                            .OrderBy(ord => ord.OrderDate).ToList();
+                                            .OrderBy(ord => ord.OrderDate).OrderByDescending(or => or.OrderDate).ToList();
             }
             catch (Exception ex)
             {

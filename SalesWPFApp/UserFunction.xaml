@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="UserFunction" Height="600" Width="750" WindowStartupLocation="CenterScreen"
+        Title="UserFunction" Height="450" Width="750" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <StackPanel Orientation="Vertical">
         <Label Content="User Management" HorizontalAlignment="Center"
@@ -43,14 +43,15 @@
                HorizontalAlignment="Right"
                VerticalAlignment="Center"/>
 
-                    <TextBox x:Name="txtMemberId" Grid.Row="0" Grid.Column="1" Height="22"/>
-                    <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="1" Height="22"/>
-                    <TextBox x:Name="txtCompany" Grid.Row="2" Grid.Column="1" Height="22"/>
-                    <TextBox x:Name="txtCity" Grid.Row="3" Grid.Column="1" Height="22"/>
-                    <TextBox x:Name="txtCountry" Grid.Row="4" Grid.Column="1" Height="22"/>
+                    <TextBox x:Name="txtMemberId" Grid.Row="0" Grid.Column="1" 
+                             IsReadOnly="True" Height="22"/>
+                    <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="1" IsReadOnly="True" Height="22"/>
+                    <TextBox x:Name="txtCompany" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Height="22"/>
+                    <TextBox x:Name="txtCity" Grid.Row="3" Grid.Column="1" IsReadOnly="True" Height="22"/>
+                    <TextBox x:Name="txtCountry" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Height="22"/>
                 </Grid>
                     <Button x:Name="btnUpdProfile" Height="30" Width="100" Margin="0,20,0,0"
-                            >Update Profile</Button>
+                            Click="btnUpdProfile_Click">Update Profile</Button>
             </StackPanel>
             <ListView x:Name="lvOrder" Grid.Column="1" Margin="30,0,60,0" Width="410">
                 <ListView.View>

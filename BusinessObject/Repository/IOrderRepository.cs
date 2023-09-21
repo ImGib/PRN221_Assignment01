@@ -10,6 +10,7 @@ namespace BusinessObject.Repository
     public interface IOrderRepository
     {
         Order GetOrder(int id);
+        IEnumerable<Order> GetOrdersByMemberID(int id);
         IEnumerable<Order> GetAll();
         void InsertOrder(Order order);
         void UpdateOrder(Order order);

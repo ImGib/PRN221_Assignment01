@@ -51,13 +51,32 @@ namespace SalesWPFApp
         {
             try
             {
-                var orders = user.Orders;
+                var orders = orderRepository.GetOrdersByMemberID(user.MemberId);
                 lvOrder.ItemsSource = orders;
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Cannot bind Order History. " + ex.Message);
             }
             return true;
+        }
+
+        private void btnUpdProfile_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MemberRegister memberRegister = new MemberRegister(memberRepository, false, user);
+                //ModifyMember modifyMember = new ModifyMember(memberRepository, false, user);
+                Hide();
+                memberRegister.ShowDialog();
+                //modifyMember.ShowDialog();
+                //user = memberRepository.GetMember(user.MemberId);
+                BindingProfile();
+                ShowDialog();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Open Update Profile! " + ex.Message);
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="Member Mangement" Height="470" Width="800" ResizeMode="NoResize"
+        Title="Member Mangement" Height="410" Width="800" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <StackPanel>
         <Label Content="Member Mangement" HorizontalContentAlignment="Center" 
@@ -16,10 +16,9 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="0" Height="300" Grid.Column="0">
+            <StackPanel Grid.Row="0"  Grid.Column="0">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
@@ -46,12 +45,9 @@
                     <Label Content="Country: " Grid.Row="4" Grid.Column="0"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Center"/>
-                    <Label Content="Password: " Grid.Row="5" Grid.Column="0"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Center"/>
 
                     <TextBox x:Name="txtMemberId" Grid.Row="0" Grid.Column="1" Height="22"
-                             Text="{Binding Path=MemberId, Mode=OneWay}"
+                             Text="{Binding Path=MemberId, Mode=OneWay}" IsReadOnly="True"
                              DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
                     <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="1" Height="22"
                              Text="{Binding Path=Email, Mode=OneWay}"
@@ -65,14 +61,12 @@
                     <TextBox x:Name="txtCountry" Grid.Row="4" Grid.Column="1" Height="22"
                              Text="{Binding Path=Country, Mode=OneWay}"
                              DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
-                    <TextBox x:Name="txtPassword" Grid.Row="5" Grid.Column="1" Height="22"
-                             Text="{Binding Path=Password, Mode=OneWay}"
-                             DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
+                    
                 </Grid>
             </StackPanel>
 
             <ListView x:Name="lvMember" Grid.Row="0" Grid.Column="1" Margin="15,0,15,0"
-                      Height="280" Width="500">
+                      Width="500">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Member ID"
@@ -85,8 +79,8 @@
                                         DisplayMemberBinding="{Binding Path=City}"/>
                         <GridViewColumn Header="Country"
                                         DisplayMemberBinding="{Binding Path=Country}"/>
-                        <GridViewColumn Header="Password"
-                                        DisplayMemberBinding="{Binding Path=Password}"/>
+                        <GridViewColumn Header="Country"
+                                        DisplayMemberBinding="{Binding Path=Country}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

@@ -59,10 +59,10 @@
                     <TextBox x:Name="txtOrderDate" Grid.Row="2" Grid.Column="1" Height="22"
                          Text="{Binding Path=OrderDate, Mode=OneWay,StringFormat='yyyy/dd/MM'}"
                          DataContext="{Binding ElementName=lvOrder, Path=SelectedItem}"/>
-                    <TextBox x:Name="txtRequiredDate" Grid.Row="3" Grid.Column="1" Height="22"
+                    <DatePicker x:Name="txtRequiredDate" Grid.Row="3" Grid.Column="1" Height="22"
                          Text="{Binding Path=RequiredDate, Mode=OneWay,StringFormat='yyyy/dd/MM'}"
                          DataContext="{Binding ElementName=lvOrder, Path=SelectedItem}"/>
-                    <TextBox x:Name="txtShippedDate" Grid.Row="4" Grid.Column="1" Height="22"
+                    <DatePicker x:Name="txtShippedDate" Grid.Row="4" Grid.Column="1" Height="22"
                          Text="{Binding Path=ShippedDate, Mode=OneWay,StringFormat='yyyy/dd/MM'}"
                          DataContext="{Binding ElementName=lvOrder, Path=SelectedItem}"/>
                     <TextBox x:Name="txtFreight" Grid.Row="5" Grid.Column="1" Height="22"

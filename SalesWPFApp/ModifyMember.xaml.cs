@@ -1,6 +1,7 @@
 ﻿using BusinessObject.Repository;
 using DataAccess.DataAccess;
 using System;
+using System.Net.Mail;
 using System.Windows;
 
 namespace SalesWPFApp
@@ -41,7 +42,8 @@ namespace SalesWPFApp
                 txtCountry.Text = updMember.Country;
                 txtCity.Text = updMember.City;
                 txtCompany.Text = updMember.CompanyName;
-                txtPassword.Text = updMember.Password;
+                txtPassword.Password = updMember.Password;
+                txtPassword.IsEnabled = false;
             }
             catch (Exception ex)
             {
@@ -56,7 +58,11 @@ namespace SalesWPFApp
             {
                 if (MessageBox.Show("Do You Wanna " + strOption + " Member?", strOption + " Member", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    Member member = GetScreenInfo();
+                    Member? member = GetScreenInfo();
+                    if(member == null)
+                    {
+                        return;
+                    }
                     if (isAdd)
                     {
                         memberRepository.InsertMember(member);
@@ -86,7 +92,7 @@ namespace SalesWPFApp
             }
         }
 
-        private Member GetScreenInfo()
+        private Member? GetScreenInfo()
         {
             Member member = new Member();
 
@@ -95,19 +101,31 @@ namespace SalesWPFApp
                 if (!isAdd)
                 {
                     member.MemberId = int.Parse(txtMemberId.Text);
+                    member.Password = memberRepository.GetMember(updMember.MemberId).Password;
+                } else
+                {
+                    if (String.IsNullOrEmpty(txtPassword.Password))
+                    {
+                        throw new Exception("Please Enter Password!");
+                    }
+                    member.Password = txtPassword.Password;
                 }
+                //validate mail
+                MailAddress mail = new MailAddress(txtEmail.Text);
+
                 member.Email = txtEmail.Text;
                 member.Country = txtCountry.Text;
                 member.City = txtCity.Text;
                 member.CompanyName = txtCompany.Text;
-                member.Password = txtPassword.Text;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("GetScreenInfo: " + ex.Message);
+                return null;
             }
 
             return member;
         }
+
     }
 }

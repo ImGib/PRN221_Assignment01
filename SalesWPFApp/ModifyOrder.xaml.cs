@@ -88,9 +88,6 @@ namespace SalesWPFApp
                 order.RequiredDate = String.IsNullOrEmpty(txtRequiredDate.Text) ? null : DateTime.Parse(txtRequiredDate.Text);
                 order.ShippedDate = String.IsNullOrEmpty(txtShippedDate.Text) ? null : DateTime.Parse(txtShippedDate.Text);
                 order.Freight = String.IsNullOrEmpty(txtFreight.Text) ? null : Decimal.Parse(txtFreight.Text);
-                
-                //Member member = MemberDAO.Instance.GetMemberById(int.Parse(txtMemberId.Text));
-                //member.Orders.Add(order);
 
             }
             catch (Exception ex)

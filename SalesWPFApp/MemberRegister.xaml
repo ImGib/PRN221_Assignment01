@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="MemberRegister" Height="620" Width="400">
+        Height="620" Width="400" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-        <Label Content="Member Register" HorizontalAlignment="Center"
-               FontSize="25" Height="60"/>
+        <Label Content="User Register" HorizontalAlignment="Center"
+               FontSize="25" Height="60" Name="lbTitle"/>
         <Grid DockPanel.Dock="Top" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

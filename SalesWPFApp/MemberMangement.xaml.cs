@@ -88,7 +88,7 @@ namespace SalesWPFApp
                 member.Country = txtCountry.Text;
                 member.City = txtCity.Text;
                 member.CompanyName = txtCompany.Text;
-                member.Password = txtPassword.Text;
+                //member.Password = txtPassword.Text;
             } catch (Exception ex)
             {
                 MessageBox.Show("GetMemberInfor: " + ex.Message);
